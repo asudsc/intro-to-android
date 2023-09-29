@@ -18,10 +18,10 @@ import com.asudsc.recipeapplication.ui.theme.RecipeApplicationTheme
 import com.asudsc.recipeapplication.viewmodels.SharedViewModel
 
 class MainActivity : ComponentActivity() {
-    private val sharedViewModel: SharedViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedViewModel: SharedViewModel by viewModels()
         super.onCreate(savedInstanceState)
+
         setContent {
             val navController = rememberNavController()
 
@@ -46,8 +46,8 @@ class MainActivity : ComponentActivity() {
                         DetailScreen(
                             recipe = recipes[recipeId ?: 0],
                             navigateBack = {
-                            navController.popBackStack()
-                        })
+                                navController.popBackStack()
+                            })
                     }
                 }
             }
